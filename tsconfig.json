@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es5",
+    "strict": true,
+    "sourceMap": true,
+    "types": [
+        "marked", 
+        "react", 
+        "react-dom", 
+        "react-textarea-autosize",
+        "jest",
+        "node"
+    ],
+    "outDir": "./output/public",
+    "jsx": "react",
+    "lib": ["dom", "es2015.promise", "es5"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": "./public",
+    "importHelpers": true,
+    "noEmitHelpers": true,
+    "noUnusedLocals": true,
+    "paths": {
+      "@fider/*": [
+        "*"
+      ]
+    }
+  },
+  "include": [
+    "./public/**/*"
+  ],
+}

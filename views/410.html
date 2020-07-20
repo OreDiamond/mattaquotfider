@@ -1,0 +1,15 @@
+{{define "server-data"}}{{end}}
+
+{{define "content"}}
+  <div class="container failure-page">
+    <img src="{{.__logo}}"/>
+    <h1>EXPIRED</h1>
+    <p>The link you clicked has expired.</p>
+
+    {{ if .__tenant }}
+      <span>Take me back to <a href="{{ .__settings.baseURL }}">{{ .__settings.baseURL }}</a> home page.</span>
+    {{ end }}
+  </div>
+{{end}}
+
+{{define "end-of-body"}}{{end}}

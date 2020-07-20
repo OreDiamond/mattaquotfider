@@ -1,0 +1,97 @@
+@import '~@fider/assets/styles/variables.scss';
+
+.c-modal-dimmer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1em;
+  background-color: rgba(60, 60, 60, .8);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  animation: dimmerFadeIn 0.5s;
+
+  @media only screen and (max-height: 483px) {
+    overflow-y: scroll;
+    display: block;
+  }
+}
+
+@keyframes dimmerFadeIn {
+  from { background-color: rgba(60, 60, 60, .1); }
+  to { background-color: rgba(60, 60, 60, .8); }
+}
+
+
+@keyframes windowfadeIn {
+  from { 
+    transform: scale(0.7);
+    opacity: 0; 
+  }
+  to { 
+    transform: scale(1);
+    opacity: 1; 
+  }
+}
+
+.c-modal-window {
+  z-index: 101;
+  text-align: left;
+  background: #fff;
+  border: none;
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 3px 3px 0 rgba(0,0,0,.2), 1px 3px 15px 2px rgba(0,0,0,.2);
+  box-shadow: 1px 3px 3px 0 rgba(0,0,0,.2), 1px 3px 15px 2px rgba(0,0,0,.2);
+  width: 100%;
+  animation: windowfadeIn 0.5s;
+
+  &.m-small {
+    @include media(">=md") {
+      width: 500px;
+    }
+  }
+
+  &.m-large {
+    @include media(">=md") {
+      width: 750px;
+    }
+  }
+
+  &.m-center {
+    text-align: center;
+  }
+
+  .c-modal-header {
+    font-size: $font-size-large;
+    font-weight: 600;
+    padding: 15px 20px;
+    border-bottom: 1px solid $gray-lighter;
+  }
+
+  .c-modal-content {
+    padding: 15px 20px;
+  }
+
+  .c-modal-footer {
+    background: $gray-lightest;
+    padding: 10px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: 1px solid $gray-light;
+    &.m-right {
+      text-align: right;
+    }
+    &.m-center {
+      text-align: center;
+    }
+    &.m-left {
+      text-align: left;
+    }
+  }
+}
