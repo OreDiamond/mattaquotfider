@@ -1,0 +1,6 @@
+node_modules
+tests
+data
+output
+.git
+cover.out
