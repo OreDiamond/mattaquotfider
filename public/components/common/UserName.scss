@@ -1,0 +1,11 @@
+@import '~@fider/assets/styles/variables.scss';
+
+.c-username {
+  color: $gray-darkest;
+  font-weight: 600;
+
+  &.m-staff {
+    color: $admin-color;
+    border-color: $admin-color;
+  }
+}
