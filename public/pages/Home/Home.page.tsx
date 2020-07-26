@@ -1,5 +1,4 @@
 import "./Home.page.scss";
-import "./Home.page.html";
 
 import React, { useState } from "react";
 import { Post, Tag, PostStatus } from "@fider/models";
