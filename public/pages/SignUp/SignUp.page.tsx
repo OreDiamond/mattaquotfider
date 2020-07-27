@@ -143,7 +143,7 @@ export default class SignUpPage extends React.Component<{}, SignUpPageState> {
     return (
       <div id="p-signup" className="page container">
         {modal}
-        <img className="logo" src="https://i.ibb.co/FWFXyWF/Copy-of-Copy-of-Copy-of-T.png" />
+        <img className="logo" src="https://i.ibb.co/mB41yRg/logo-small.png" />
 
         <h3>1. Who are you?</h3>
         <DisplayError fields={["token"]} error={this.state.error} />
