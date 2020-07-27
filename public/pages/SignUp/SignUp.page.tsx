@@ -145,7 +145,7 @@ export default class SignUpPage extends React.Component<{}, SignUpPageState> {
         {modal}
         <img className="logo" src="https://getfider.com/images/logo-100x100.png" />
 
-        <h3>1. Who are you?</h3>
+        <h3>1. What would you like as your Beyop username?</h3>
         <DisplayError fields={["token"]} error={this.state.error} />
 
         {this.user ? (
@@ -154,7 +154,7 @@ export default class SignUpPage extends React.Component<{}, SignUpPageState> {
           </p>
         ) : (
           <>
-            <p>We need to identify you to setup your new Fider account.</p>
+            <p>We need to identify you to setup your new Beyop suggestion page!.</p>
             <SignInControl useEmail={false} />
             <Form error={this.state.error}>
               <Input field="name" maxLength={100} onChange={this.setName} placeholder="Name" />
@@ -163,14 +163,14 @@ export default class SignUpPage extends React.Component<{}, SignUpPageState> {
           </>
         )}
 
-        <h3>2. What is this Feedback Forum for?</h3>
+        <h3>2. What is your Beyop Suggestion Page for? (You can not change this!)</h3>
 
         <Form error={this.state.error}>
           <Input
             field="tenantName"
             maxLength={60}
             onChange={this.setTenantName}
-            placeholder="your company or product name"
+            placeholder="Your Project!"
           />
           {!Fider.isSingleHostMode() && (
             <Input
@@ -196,7 +196,7 @@ export default class SignUpPage extends React.Component<{}, SignUpPageState> {
 
         <h3>3. Review</h3>
 
-        <p>Make sure information provided above is correct.</p>
+        <p>Make sure information provided above is correct!</p>
 
         <Form error={this.state.error}>
           <LegalAgreement onChange={this.onAgree} />
