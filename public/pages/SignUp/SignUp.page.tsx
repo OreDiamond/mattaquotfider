@@ -143,9 +143,9 @@ export default class SignUpPage extends React.Component<{}, SignUpPageState> {
     return (
       <div id="p-signup" className="page container">
         {modal}
-        <img className="logo" src="https://getfider.com/images/logo-100x100.png" />
+        <img className="logo" src="https://i.ibb.co/FWFXyWF/Copy-of-Copy-of-Copy-of-T.png" />
 
-        <h3>1. What would you like as your Beyop username?</h3>
+        <h3>1. Who are you?</h3>
         <DisplayError fields={["token"]} error={this.state.error} />
 
         {this.user ? (
@@ -154,16 +154,16 @@ export default class SignUpPage extends React.Component<{}, SignUpPageState> {
           </p>
         ) : (
           <>
-            <p>We need to identify you to setup your new Beyop suggestion page!.</p>
+            <p>We need to identify you to setup your new Beyop suggestion page!</p>
             <SignInControl useEmail={false} />
             <Form error={this.state.error}>
-              <Input field="name" maxLength={100} onChange={this.setName} placeholder="Name" />
+              <Input field="name" maxLength={100} onChange={this.setName} placeholder="Username" />
               <Input field="email" maxLength={200} onChange={this.setEmail} placeholder="Email" />
             </Form>
           </>
         )}
 
-        <h3>2. What is your Beyop Suggestion Page for? (You can not change this!)</h3>
+        <h3>2. What is your Beyop Suggestion Page for?</h3>
 
         <Form error={this.state.error}>
           <Input
