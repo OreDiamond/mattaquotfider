@@ -130,7 +130,7 @@ export default class SignUpPage extends React.Component<{}, SignUpPageState> {
   public render() {
     const modal = (
       <Modal.Window canClose={false} isOpen={this.state.submitted} onClose={this.noop}>
-        <Modal.Header>Thank you for registering!</Modal.Header>
+        <Modal.Header>Thank you for registering your Beyop Suggestions Page!</Modal.Header>
         <Modal.Content>
           <p>
             We have just sent a confirmation link to <b>{this.state.email}</b>. <br /> Click the link to finish your
