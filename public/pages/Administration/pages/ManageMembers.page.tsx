@@ -157,7 +157,7 @@ export default class ManageMembersPage extends AdminBasePage<ManageMembersPagePr
           field="query"
           icon={this.state.query ? FaTimes : FaSearch}
           onIconClick={this.state.query ? this.clearSearch : undefined}
-          placeholder="Search for users by name..."
+          placeholder="Search for users by their username..."
           value={this.state.query}
           onChange={this.handleSearchFilterChanged}
         />
