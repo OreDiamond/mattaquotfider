@@ -1,7 +1,7 @@
-subject: Confirm your new Fider instance
+subject: Confirm your new Beyop Instance
 body:
 <tr>
-  <td>Click the link below to confirm your new Fider instance.</td>
+  <td>Click the link below to confirm your new Beyop instance.</td>
 </tr>
 <tr>
   <td height="20">&nbsp;</td>
