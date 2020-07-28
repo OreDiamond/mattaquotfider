@@ -56,19 +56,19 @@ export default class AdvancedSettingsPage extends AdminBasePage<AdvancedSettings
           onChange={this.setCustomCSS}
         >
           <p className="info">
-            Custom CSS allows you to change the look and feel of Fider so that you can apply your own branding.
+            Custom CSS allows you to change the look and feel of Beyop so that you can apply your own branding.
             <br />
             This is a powerful and flexible feature, but requires basic understanding of{" "}
             <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS">CSS</a>.
           </p>
           <p className="info">
-            Custom CSS might break the design of your site as Fider evolves. By doing this, you're taking this risk, and
-            you will need to fix issues if they arise. <br /> You can minimize some issues by following these
+            Custom CSS might break the design of your site as Beyop evolves. By doing this, you're taking this risk, and
+            you will need to fix issues or conduct a database reset if they arise. <br /> You can minimize some issues by following these
             recommendations:
           </p>
           <ul className="info">
             <li>
-              <strong>Avoid nested selectors</strong>: Fider might change the structure of the HTML at any time, and
+              <strong>Avoid nested selectors</strong>: Beyop might change the structure of the HTML at any time, and
               it's likely that such changes would invalidate some rules.
             </li>
             <li>
