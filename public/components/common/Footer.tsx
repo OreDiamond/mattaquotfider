@@ -17,9 +17,9 @@ export const Footer = () => {
             <TermsOfService />
           </div>
         )}
-        <a className="l-powered" target="_blank" href="https://getfider.com/">
-          <img src="https://getfider.com/images/logo-100x100.png" alt="Fider" />
-          <span>Powered by Fider</span>
+        <a className="l-powered" target="_blank" href="https://discord.gg/ANAaYGe">
+          <img src="https://i.ibb.co/FWFXyWF/Copy-of-Copy-of-Copy-of-T.png" alt="Fider" />
+          <span>Powered by Beyop</span>
         </a>
       </div>
     </div>
