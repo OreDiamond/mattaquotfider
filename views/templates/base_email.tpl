@@ -13,7 +13,7 @@
 			{{ if .logo }}
 			<tr>
 				<td>
-					<img height="50" src="{{ .logo }}"/>
+					<img height="50" src="https://i.ibb.co/fdJPzgy/logo.png"/>
 				</td>
 			</tr>
 			<tr>
