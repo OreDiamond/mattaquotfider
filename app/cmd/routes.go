@@ -49,7 +49,7 @@ func routes(r *web.Engine) *web.Engine {
 	r.Use(middlewares.User())
 
 	r.Get("/browser-not-supported", handlers.BrowserNotSupported())
-	r.Get("/privacy", handlers.LegalPage("Privacy Policy", "privacy.md"))
+	r.Get("/privacy", handlers.LegalPage("Privacy Policy", "https://beyop.com/privacy-policy"))
 	r.Get("/terms", handlers.LegalPage("Terms of Service", "terms.md"))
 
 	r.Post("/_api/tenants", handlers.CreateTenant())
