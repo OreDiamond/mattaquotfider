@@ -24,7 +24,7 @@ export const PrivacyPolicy: React.FunctionComponent<{}> = () => {
 
   if (fider.settings.hasLegal) {
     return (
-      <a href="/privacy" target="_blank">
+      <a href="https://beyop.com/privacy-policy" target="_blank">
         Privacy Policy
       </a>
     );
