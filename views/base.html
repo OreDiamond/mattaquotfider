@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-style-src 'report-sample' 'self';
-object-src 'none';
-base-uri 'self';
-connect-src 'self' https://pagead2.googlesyndication.com;
-font-src 'self';
-frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com;
-img-src 'self' https://i.ibb.co https://pagead2.googlesyndication.com;
-manifest-src 'self';
-media-src 'self';
-report-uri https://5ff0d984bcd8c7f28285c982.endpoint.csper.io/;
-worker-src 'none';">
   <meta charset="utf-8"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';script-src 'self' https://adservice.google.com/adsid/integrator.js https://cdn.polyfill.io/v2/polyfill.min.js https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js https://partner.googleadservices.com/gampad/cookie.js https://tpc.googlesyndication.com/sodar/sodar2.js;">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <link rel="icon" href="{{ .private.favicon }}?size=64" sizes="64x64" type="image/png">
