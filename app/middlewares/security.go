@@ -8,6 +8,22 @@ import (
 	"github.com/getfider/fider/app/pkg/web"
 )
 
+var (
+	cspBase    = "base-uri 'self'"
+	cspDefault = "default-src 'self'"
+	cspStyle   = "style-src 'self' 'nonce-%[1]s' https://fonts.googleapis.com 'unsafe-hashes' 'sha256-vYd+FsML43MBXhP+pXOhW9h0Cdq43hkCe4Im/yyvhss=' %[2]s"
+	cspScript  = "script-src 'self' 'nonce-%[1]s' https://cdn.polyfill.io https://js.stripe.com https://www.google-analytics.com https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js 'unsafe-hashes' 'sha256-EbyVhJEaB535F/oyiHMhvPjOd8eW+0+ZB6DQHna8USU=' %[2]s"
+	cspFont    = "font-src 'self' https://fonts.gstatic.com data: %[2]s"
+	cspImage   = "img-src 'self' https: data: %[2]s"
+	cspObject  = "object-src 'none'"
+	cspFrame   = "frame-src 'self' https://js.stripe.com"
+	cspMedia   = "media-src 'none'"
+	cspConnect = "connect-src 'self' https://www.google-analytics.com https://ipinfo.io https://js.stripe.com %[2]s"
+
+	//CspPolicyTemplate is the template used to generate the policy
+	CspPolicyTemplate = fmt.Sprintf("%s; %s; %s; %s; %s; %s; %s; %s; %s; %s", cspBase, cspDefault, cspStyle, cspScript, cspImage, cspFont, cspObject, cspMedia, cspConnect, cspFrame)
+)
+
 // Secure adds web security related Http Headers to response
 func Secure() web.MiddlewareFunc {
 	return func(next web.HandlerFunc) web.HandlerFunc {
@@ -16,7 +32,7 @@ func Secure() web.MiddlewareFunc {
 			if cdnHost != "" && !env.IsSingleHostMode() {
 				cdnHost = "*." + cdnHost
 			}
-			csp := fmt.Sprintf(web.CspPolicyTemplate, c.ContextID(), cdnHost)
+			csp := fmt.Sprintf(CspPolicyTemplate, c.ContextID(), cdnHost)
 
 			c.Response.Header().Set("Content-Security-Policy", strings.TrimSpace(csp))
 			c.Response.Header().Set("X-XSS-Protection", "1; mode=block")
