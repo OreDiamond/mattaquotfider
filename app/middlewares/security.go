@@ -11,14 +11,14 @@ import (
 var (
 	cspBase    = "base-uri 'self'"
 	cspDefault = "default-src 'self'"
-	cspStyle   = "style-src 'self' 'nonce-%[1]s' https://fonts.googleapis.com 'unsafe-hashes' 'sha256-vYd+FsML43MBXhP+pXOhW9h0Cdq43hkCe4Im/yyvhss=' %[2]s"
+	cspStyle   = "style-src 'self' 'nonce-%[1]s' https://fonts.googleapis.com 'unsafe-hashes' 'sha256-vYd+FsML43MBXhP+pXOhW9h0Cdq43hkCe4Im/yyvhss=' 'sha256-S3fdaK0liRByULA2t+qOVLm5n+JryVirspY3l32QWZg=' 'sha256-wV/8IZEP5L+Ts7UuzHM0O3/NWppDZPY8oyGjTCbXY8g=' 'sha256-o/kbe6RnURgWNmQt/lS02Rrn0WWOYgK9UupCx39FTBI=' 'sha256-v9Mw9x7yMApHnSPDExzKqU3NtzpjJzqCFAjKU2czIRo=' 'sha256-wS600lp+GgVqqJeLvGNEErrwLDE2mvIJac0y4P8ISpE=' 'sha256-udQJaD2iLjLPwDBs5CIgWma5W3O8BHOI9Sy+17DR6tk=' %[2]s"
 	cspScript  = "script-src 'self' 'nonce-%[1]s' https://cdn.polyfill.io https://js.stripe.com https://www.google-analytics.com https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js 'unsafe-hashes' 'sha256-EbyVhJEaB535F/oyiHMhvPjOd8eW+0+ZB6DQHna8USU=' %[2]s"
 	cspFont    = "font-src 'self' https://fonts.gstatic.com data: %[2]s"
 	cspImage   = "img-src 'self' https: data: %[2]s"
 	cspObject  = "object-src 'none'"
-	cspFrame   = "frame-src 'self' https://js.stripe.com"
+	cspFrame   = "frame-src 'self' https://js.stripe.com https://googleads.g.doubleclick.net"
 	cspMedia   = "media-src 'none'"
-	cspConnect = "connect-src 'self' https://www.google-analytics.com https://ipinfo.io https://js.stripe.com %[2]s"
+	cspConnect = "connect-src 'self' https://www.google-analytics.com https://ipinfo.io https://js.stripe.com https://pagead2.googlesyndication.com/getconfig/sodar?sv=200&tid=gda&tv=r20210201&st=env %[2]s"
 
 	//CspPolicyTemplate is the template used to generate the policy
 	CspPolicyTemplate = fmt.Sprintf("%s; %s; %s; %s; %s; %s; %s; %s; %s; %s", cspBase, cspDefault, cspStyle, cspScript, cspImage, cspFont, cspObject, cspMedia, cspConnect, cspFrame)
