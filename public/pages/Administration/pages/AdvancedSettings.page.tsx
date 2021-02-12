@@ -84,7 +84,7 @@ export default class AdvancedSettingsPage extends AdminBasePage<AdvancedSettings
         {Fider.session.user.isAdministrator && (
           <div className="field">
             <Button color="positive" onClick={this.handleSave}>
-              Save
+              Submit
             </Button>
           </div>
         )}
