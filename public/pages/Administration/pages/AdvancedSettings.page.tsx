@@ -47,35 +47,38 @@ export default class AdvancedSettingsPage extends AdminBasePage<AdvancedSettings
   public content() {
     return (
       <Form error={this.state.error}>
+        <h1 className="info">
+          <strong>Beyop Partnership</stong>
+        </h1>
+        
+          <p className="info">
+            Beyop Partners gain exclusive perks such as beta features, advanced statistics and user data, verification badge on an instance, owner receiving a badge that'll be accessible on any Beyop instance he signs up for, and more!
+          </p>
+          <p className="info">
+            In the text field under this message, please describe your community, activity, size, type of community, your relationship with the community (owner, admin, etc), and why you're interested in a partnership (such as expanding development potential, etc).
+            You'll receive an email regarding your application status within 48 hours. Upon passing the application, you are not guarenteed partnership.
+          </p>
+          <p className="info">
+          Requirements for partnership are the following, failure to meet these requirements will get your application auto-denied:
+          </p>
+          <ul className="info">
+            <li>
+              <strong>100 Active Registered Members</strong>: We don't publicly disclose our requirements for active and not all 100 members have to be active.
+              We aim for potential partners to posses this in order to ensure they are legit.
+            </li>
+            <li>
+              <strong>Official Instance of a Group</strong>: We require potential partners to be considered "official" with their group.
+              For example, a Minecraft suggestion page that isn't managed by Mojang (minecraft developer) is ineligible for partnership.
+            </li>
+          </ul>
         <TextArea
           field="customCSS"
-          label="Custom CSS"
+          label="Beyop Partnership"
           disabled={!Fider.session.user.isAdministrator}
           minRows={10}
           value={this.state.customCSS}
           onChange={this.setCustomCSS}
         >
-          <p className="info">
-            Custom CSS allows you to change the look and feel of Beyop so that you can apply your own branding.
-            <br />
-            This is a powerful and flexible feature, but requires basic understanding of{" "}
-            <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS">CSS</a>.
-          </p>
-          <p className="info">
-            Custom CSS might break the design of your site as Beyop evolves. By doing this, you're taking this risk, and
-            you will need to fix issues or conduct a database reset if they arise. <br /> You can minimize some issues by following these
-            recommendations:
-          </p>
-          <ul className="info">
-            <li>
-              <strong>Avoid nested selectors</strong>: Beyop might change the structure of the HTML at any time, and
-              it's likely that such changes would invalidate some rules.
-            </li>
-            <li>
-              <strong>Keep it short</strong>: Customize only the essential. Avoid changing the style or structure of the
-              entire site.
-            </li>
-          </ul>
         </TextArea>
 
         {Fider.session.user.isAdministrator && (
