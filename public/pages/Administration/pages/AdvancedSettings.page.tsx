@@ -48,7 +48,7 @@ export default class AdvancedSettingsPage extends AdminBasePage<AdvancedSettings
     return (
       <Form error={this.state.error}>
         <h1 className="info">
-          <strong>Beyop Partnership</stong>
+          <strong>Beyop Partnership</strong>
         </h1>
         
           <p className="info">
