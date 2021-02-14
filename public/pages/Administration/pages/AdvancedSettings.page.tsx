@@ -73,7 +73,7 @@ export default class AdvancedSettingsPage extends AdminBasePage<AdvancedSettings
           </ul>
         <TextArea
           field="customCSS"
-          label="Beyop Partnership"
+          label=""
           disabled={!Fider.session.user.isAdministrator}
           minRows={10}
           value={this.state.customCSS}
