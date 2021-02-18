@@ -25,7 +25,7 @@ export default class InvitationsPage extends AdminBasePage<{}, InvitationsPageSt
     super(props);
 
     this.state = {
-      subject: `Share your ideas and thoughts about ${Fider.session.tenant.name}`,
+      subject: `Beyop Partnership - Application (${Fider.session.tenant.name})`,
       message: `Hi,
 
 At **${Fider.session.tenant.name}** we take feedback very seriously, which is why we've launched a space where you can vote, discuss and share your ideas and thoughts about our products and services.
