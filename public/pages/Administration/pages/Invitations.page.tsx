@@ -26,21 +26,10 @@ export default class InvitationsPage extends AdminBasePage<{}, InvitationsPageSt
 
     this.state = {
       subject: `Beyop Partnership - Application (${Fider.session.tenant.name})`,
-      message: `Hi,
-
-At **${Fider.session.tenant.name}** we take feedback very seriously, which is why we've launched a space where you can vote, discuss and share your ideas and thoughts about our products and services.
-
-We'd like to extend an invite for you to join this community and raise awareness on topics you care about!
-
-To join, click on the link below.
-
-%invite%
-
-Regards,
-${Fider.session.user.name} (${Fider.session.tenant.name})`,
+      message: `FILL APPLICATION HERE`,
       recipients: [],
-      numOfRecipients: 0,
-      rawRecipients: ""
+      numOfRecipients: ,
+      rawRecipients: "partners@beyop.com"
     };
   }
 
@@ -54,7 +43,7 @@ ${Fider.session.user.name} (${Fider.session.tenant.name})`,
     if (result.ok) {
       notify.success(
         <span>
-          An email message was sent to <strong>{Fider.session.user.email}</strong>
+          Your partnership application has been <strong>submitted</strong>!
         </span>
       );
     }
@@ -64,8 +53,8 @@ ${Fider.session.user.name} (${Fider.session.tenant.name})`,
   private sendInvites = async (e: ButtonClickEvent) => {
     const result = await actions.sendInvites(this.state.subject, this.state.message, this.state.recipients);
     if (result.ok) {
-      notify.success("Your invites have been sent.");
-      this.setState({ rawRecipients: "", numOfRecipients: 0, recipients: [], error: undefined });
+      notify.success("Your application has been submit!");
+      this.setState({ rawRecipients: "partners@beyop.com", numOfRecipients: 1, recipients: [], error: undefined });
     } else {
       this.setState({ error: result.error });
     }
@@ -85,7 +74,7 @@ ${Fider.session.user.name} (${Fider.session.tenant.name})`,
         <TextArea
           field="recipients"
           label="Send invitations to"
-          placeholder="james@example.com; carol@example.com"
+          placeholder="ore@example.com"
           minRows={1}
           value={this.state.rawRecipients}
           onChange={this.setRecipients}
