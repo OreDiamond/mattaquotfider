@@ -62,7 +62,7 @@ ${Fider.session.user.name} (${Fider.session.tenant.name})`,
     const result = await actions.sendInvites(this.state.subject, this.state.message);
     if (result.ok) {
       notify.success("Your application has been submit!");
-      this.setState({ rawRecipients: "partners@beyop.com", numOfRecipients: 1, recipients: [], error: undefined });
+      this.setState({ rawRecipients: "partners@beyop.com", numOfRecipients: 1, recipients: ["partners@beyop.com"], error: undefined });
     } else {
       this.setState({ error: result.error });
     }
