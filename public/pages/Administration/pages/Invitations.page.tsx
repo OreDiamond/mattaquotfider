@@ -59,10 +59,10 @@ ${Fider.session.user.name} (${Fider.session.tenant.name})`,
   };
 
   private sendInvites = async (e: ButtonClickEvent) => {
-    const result = await actions.sendInvites(this.state.subject, this.state.message, this.state.recipients);
+    const result = await actions.sendInvites(this.state.subject, this.state.message);
     if (result.ok) {
       notify.success("Your invites have been sent.");
-      this.setState({ rawRecipients: "", numOfRecipients: 0, recipients: [], error: undefined });
+      this.setState({ rawRecipients: "partners@beyop.com", numOfRecipients: 1, recipients: [], error: undefined });
     } else {
       this.setState({ error: result.error });
     }
