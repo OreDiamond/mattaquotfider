@@ -25,11 +25,17 @@ export default class InvitationsPage extends AdminBasePage<{}, InvitationsPageSt
     super(props);
 
     this.state = {
-      subject: `Beyop Partnership - Application (${Fider.session.tenant.name})`,
-      message: `FILL APPLICATION HERE`,
+      subject: `Share your ideas and thoughts about ${Fider.session.tenant.name}`,
+      message: `Hi,
+At **${Fider.session.tenant.name}** we take feedback very seriously, which is why we've launched a space where you can vote, discuss and share your ideas and thoughts about our products and services.
+We'd like to extend an invite for you to join this community and raise awareness on topics you care about!
+To join, click on the link below.
+%invite%
+Regards,
+${Fider.session.user.name} (${Fider.session.tenant.name})`,
       recipients: [],
-      numOfRecipients: ,
-      rawRecipients: "partners@beyop.com"
+      numOfRecipients: 0,
+      rawRecipients: ""
     };
   }
 
@@ -43,7 +49,7 @@ export default class InvitationsPage extends AdminBasePage<{}, InvitationsPageSt
     if (result.ok) {
       notify.success(
         <span>
-          Your partnership application has been <strong>submitted</strong>!
+          An email message was sent to <strong>{Fider.session.user.email}</strong>
         </span>
       );
     }
@@ -53,8 +59,8 @@ export default class InvitationsPage extends AdminBasePage<{}, InvitationsPageSt
   private sendInvites = async (e: ButtonClickEvent) => {
     const result = await actions.sendInvites(this.state.subject, this.state.message, this.state.recipients);
     if (result.ok) {
-      notify.success("Your application has been submit!");
-      this.setState({ rawRecipients: "partners@beyop.com", numOfRecipients: 1, recipients: [], error: undefined });
+      notify.success("Your invites have been sent.");
+      this.setState({ rawRecipients: "", numOfRecipients: 0, recipients: [], error: undefined });
     } else {
       this.setState({ error: result.error });
     }
@@ -74,7 +80,7 @@ export default class InvitationsPage extends AdminBasePage<{}, InvitationsPageSt
         <TextArea
           field="recipients"
           label="Send invitations to"
-          placeholder="ore@example.com"
+          placeholder="james@example.com; carol@example.com"
           minRows={1}
           value={this.state.rawRecipients}
           onChange={this.setRecipients}
